@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { InAppBrowser } from 'ionic-native'
 
 @Component({
   selector: 'page-home',
@@ -16,8 +17,8 @@ export class HomePage {
     this.fetchContent();
   }
 
-  itemSelected(feed):void{
-    alert(feed.data.url);
+  itemSelected(url: string):void{
+    let browser = new InAppBrowser(url, '_system');
   }
 
   fetchContent ():void{
