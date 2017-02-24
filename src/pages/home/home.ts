@@ -16,6 +16,10 @@ export class HomePage {
     this.fetchContent();
   }
 
+  itemSelected(feed):void{
+    alert(feed.data.url);
+  }
+
   fetchContent ():void{
     let loading = this.loadingCtrl.create({
       content: 'carregando conteúdo'
